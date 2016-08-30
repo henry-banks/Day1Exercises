@@ -2,134 +2,6 @@
 #include <string>
 using namespace std;
 
-//Exercise 1
-struct Player
-{
-	string name;
-	float health;
-	float score;
-	float position;
-	float velocity;
-};
-
-struct Point2D
-{
-	int x;
-	int y;
-};
-struct Color
-{
-	float R;
-	float G;
-	float B;
-};
-struct Rectangle2D
-{
-	Point2D points[4];
-	Color color;
-};
-
-
-//Exercise 2
-void ex2()
-{
-	Player player;
-	printf("Input player name: ");
-	cin >> player.name;
-
-	printf("\nInput player health: "); //I ACCIDENTALLY DID HEALTH AND BY THE TIME I REALIZED IT I WAS IN EXERCISE 5 AND IT WAS TOO LATE BUT THIS IS FINE THEY ARE BOTH FLOATS.
-	cin >> player.health;
-
-	printf("\n\nPlayer name: ");
-	cout << player.name << endl;
-	printf("Player health: %f", player.health);
-}
-
-
-//Exercise 3
-Player ex3()
-{
-	Player player;
-	printf("Input player name: ");
-	cin >> player.name;
-
-	printf("Input player health: ");
-	cin >> player.health;
-
-	printf("\n\nPlayer name: ");
-	cout << player.name << endl;
-	printf("Player health: %f", player.health);
-
-	return player;
-}
-
-//Exercise 4
-Player AssignPlayer()
-{
-	Player player;
-	printf("Input player name: ");
-	cin >> player.name;
-
-	printf("Input player health: ");
-	scanf_s("%f", &player.health);
-
-	return player;
-}
-void ex4()
-{
-	Player playerArray[5];
-	for (int i = 0; i < 5; i++)
-	{
-		playerArray[i] = AssignPlayer();
-		printf("\n");
-	}
-
-	for (Player i : playerArray)
-	{
-		printf("\nName: ");
-		cout << i.name << endl;
-		printf("Health: %f\n\n", i.health);
-	}
-}
-
-
-//Exercise 5
-//All these exercises are using the same code.  AAAAAAAAAAAAAH
-void ex5()
-{
-	Player playerArray[5];
-	for (int i = 0; i < 5; i++)
-	{
-		playerArray[i] = AssignPlayer();
-		printf("\n");
-	}
-
-	for (Player i : playerArray)
-	{
-		printf("\nName: ");
-		cout << i.name << endl;
-		printf("Health: %f\n\n", i.health);
-	}
-
-	string name2;
-	printf("Input the name of one of the players(case-sensitive): ");
-	cin >> name2;
-
-	bool isPlayer;
-	for (Player i : playerArray)
-	{
-		if (i.name == name2)
-		{
-			printf("Health: %f", i.health);
-			isPlayer = true;
-			break;
-		}
-	}
-	if (isPlayer) { printf("Player not in array!"); }
-}
-
-
-//Exercise 6
 struct Item
 {
 	string name;
@@ -146,7 +18,7 @@ struct Shop
 {
 	float money;
 	Item items[100]; //I do hope there are no more than 1 hundred items.
-	//also i wish i could use vectors for this...
+					 //also i wish i could use vectors for this...
 };
 
 void ChangePriceSingle(Shop &inShop)
@@ -195,7 +67,7 @@ void ChangePriceAll(Shop &inShop)
 	system("pause");
 
 	int newPrice; //I do this to search for -1, the exit code.
-	
+
 	for (int i = 0; i < 100; i++)
 	{
 		if (isItemValid(inShop.items[i]))
@@ -208,12 +80,12 @@ void ChangePriceAll(Shop &inShop)
 				return;
 			}
 			else {
-			printf("Price must be at least 0.");
-			return;
+				printf("Price must be at least 0.");
+				return;
 			}
 		}
 	}
-	
+
 }
 void SellItem(Shop &inShop)
 {
@@ -240,7 +112,7 @@ void SellItem(Shop &inShop)
 		if (inShop.items[i].name == itemName && isItemValid(inShop.items[i]))
 		{
 			//Open these if you want to die. :)
-			if (inShop.items[i].quantity >= numToSell){
+			if (inShop.items[i].quantity >= numToSell) {
 				totalCost = inShop.items[i].cost*numToSell;
 				inShop.money += totalCost;
 				inShop.items[i].quantity -= numToSell;
@@ -255,7 +127,7 @@ void SellItem(Shop &inShop)
 			break;
 		}
 	}
-	if (!isFound){
+	if (!isFound) {
 		cout << "\n" << itemName << " not found!";
 	}
 	else {
@@ -271,7 +143,7 @@ void BuyItem(Shop &inShop)
 
 	printf("Choose item to buy(case-sensitive): ");
 	cin >> itemName;
-	if (itemName == "NULL_ITEM"){
+	if (itemName == "NULL_ITEM") {
 		printf("Invalid name.\n");
 		return;
 	}
@@ -309,7 +181,7 @@ void BuyItem(Shop &inShop)
 				break;
 			}
 		}
-		
+
 	}
 
 	else
@@ -341,14 +213,14 @@ void ShowItems(Shop &inShop)
 	//Simplest one. ;D
 	printf("\n\n");
 	bool isItem = false;
-	
+
 	/*I already have the foreach loop setup and would rather do this
 	than convert it to a for loop and change everything to 'inShop.items[i]'*/
 	int count = 1;
 
 	for (Item i : inShop.items)
 	{
-		if(isItemValid(i)){
+		if (isItemValid(i)) {
 			cout << count++ << ". Name: " << i.name << " Cost: " << i.cost << " Quantity: " << i.quantity << "\n";
 			isItem = true;
 		}
@@ -421,7 +293,7 @@ void setupShop(Shop &shop)
 }
 
 //RPG shop
-void ex6()
+void main()
 {
 	Shop shop;
 	shop.money = 1000; //I'll start with 1K money.
@@ -433,12 +305,6 @@ void ex6()
 	{
 		Menu(choice, shop);
 	} while (choice != 5);
-}
-
-int main()
-{
-	ex6();
-
 
 	printf("\n\n");
 	system("pause");
