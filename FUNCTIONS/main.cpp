@@ -390,7 +390,7 @@ void ex17()
 			printf("\nYou won!\n");
 		}
 		else {
-			printf("\nThe computer won.\n");
+			printf("\nYou did not win.\n");
 		}
 
 		printf("\n\nPlay again? (y/n): ");

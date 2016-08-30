@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CircleVsCircle_Collision", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FUNCTIONS", "FUNCTIONS\FUNCTIONS.vcxproj", "{BD85A1C2-8D22-4341-A0F6-8F963C3EEC91}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Structures", "Structures\Structures.vcxproj", "{448AE29E-AF7B-4FEC-8770-38AFDF7408D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{BD85A1C2-8D22-4341-A0F6-8F963C3EEC91}.Release|x64.Build.0 = Release|x64
 		{BD85A1C2-8D22-4341-A0F6-8F963C3EEC91}.Release|x86.ActiveCfg = Release|Win32
 		{BD85A1C2-8D22-4341-A0F6-8F963C3EEC91}.Release|x86.Build.0 = Release|Win32
+		{448AE29E-AF7B-4FEC-8770-38AFDF7408D4}.Debug|x64.ActiveCfg = Debug|x64
+		{448AE29E-AF7B-4FEC-8770-38AFDF7408D4}.Debug|x64.Build.0 = Debug|x64
+		{448AE29E-AF7B-4FEC-8770-38AFDF7408D4}.Debug|x86.ActiveCfg = Debug|Win32
+		{448AE29E-AF7B-4FEC-8770-38AFDF7408D4}.Debug|x86.Build.0 = Debug|Win32
+		{448AE29E-AF7B-4FEC-8770-38AFDF7408D4}.Release|x64.ActiveCfg = Release|x64
+		{448AE29E-AF7B-4FEC-8770-38AFDF7408D4}.Release|x64.Build.0 = Release|x64
+		{448AE29E-AF7B-4FEC-8770-38AFDF7408D4}.Release|x86.ActiveCfg = Release|Win32
+		{448AE29E-AF7B-4FEC-8770-38AFDF7408D4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
