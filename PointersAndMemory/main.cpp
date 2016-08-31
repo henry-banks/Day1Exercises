@@ -8,7 +8,9 @@ void ex1()
 	char c = 'T', d = 'S';
 	char *p1 = &c;
 	char *p2 = &d;
-	char *p3;	p3 = &d;
+	char *p3;
+	p3 = &d;
+
 	cout << "*p3 = " << *p3 << endl; // (S)
 	p3 = p1;
 	cout << "*p3 = " << *p3; // (T)
@@ -27,7 +29,8 @@ void ex2()
 	int k;
 	i = 42;
 	k = i;
-	p = &i;
+	p = &i;
+
 	*p = 75;
 
 	cout << i << endl;
@@ -42,9 +45,20 @@ double *p = &c;
 The error is that a double pointer cannot point to a char variable.
 */
 
+
+//moarestuff
+void other()
+{
+	int var = 3958648;
+	float far = var;
+	printf("%f\n", far);
+	far = *(float*)&var;
+	printf("%f\n", &far);
+}
+
 void main()
 {
-	ex2();
+	other();
 
 	printf("\n\n");
 	system("pause");
